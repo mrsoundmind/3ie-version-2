@@ -386,4 +386,4 @@ function ResourceGrid({ categoryFilter, setCategoryFilter, audienceFilter, setAu
             </div>
         </section>
     );
-}
+}window.ResourceGrid = ResourceGrid;

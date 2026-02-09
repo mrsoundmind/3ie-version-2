@@ -1,4 +1,4 @@
-const resourcesData = [
+window.resourcesData = [
     {
         id: 1,
         title: "Development Evidence Portal",

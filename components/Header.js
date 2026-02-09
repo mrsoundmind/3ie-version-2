@@ -122,4 +122,4 @@ function Header() {
             </div>
         </header>
     );
-}
+}window.Header = Header;

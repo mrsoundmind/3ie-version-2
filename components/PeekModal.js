@@ -247,4 +247,4 @@ function PeekModal({ resource, isOpen, onClose }) {
             </div>
         </div >
     );
-}
+}window.PeekModal = PeekModal;

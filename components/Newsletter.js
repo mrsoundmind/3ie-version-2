@@ -35,4 +35,4 @@ function Newsletter() {
             </div>
         </section>
     );
-}
+}window.Newsletter = Newsletter;

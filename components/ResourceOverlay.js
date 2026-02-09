@@ -116,4 +116,4 @@ function ResourceOverlay({ resource, isOpen, onClose, onNext, onPrev }) {
             </div>
         </div>
     );
-}
+}window.ResourceOverlay = ResourceOverlay;

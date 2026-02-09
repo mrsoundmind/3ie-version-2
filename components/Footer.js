@@ -55,4 +55,4 @@ function Footer() {
             </div>
         </footer>
     );
-}
+}window.Footer = Footer;

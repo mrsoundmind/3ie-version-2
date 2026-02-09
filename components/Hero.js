@@ -167,4 +167,4 @@ function Hero({ categoryFilter, audienceFilter }) {
             />
         </section>
     );
-}
+}window.Hero = Hero;
