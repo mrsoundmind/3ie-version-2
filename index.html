@@ -175,6 +175,9 @@
 <body class="bg-white">
     <div id="root"></div>
     <script type="text/babel" data-presets="react,stage-3">
+        // --- 0. Global React ---
+        const { React, ReactDOM } = window;
+
         // --- 1. Resources Data ---
         window.resourcesData = [
             {
