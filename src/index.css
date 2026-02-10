@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer theme {
+    :root {
+        --primary-blue: #153A80; /* 3ie Brand Blue (Dark) */
+        --primary-dark: #00449E;
+        --secondary-bg: #F3F7FF; /* Light Blue Background */
+        --text-dark: #1A1A1A;
+        --text-gray: #4A5568;
+    }
+}
+
+@layer base {
+    body {
+        font-family: 'Open Sans', sans-serif;
+        color: var(--text-dark);
+        -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Open Sans', sans-serif;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold transition-colors duration-200;
+    }
+    .btn-primary {
+        @apply bg-[var(--primary-blue)] text-white hover:bg-[var(--primary-dark)];
+    }
+    .btn-outline {
+        @apply border-2 border-[var(--primary-blue)] text-[var(--primary-blue)] hover:bg-[var(--secondary-bg)];
+    }
+    .container-custom {
+        @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+    
+    .bg-grid-pattern {
+        background-image: radial-gradient(#CBD5E0 1px, transparent 1px);
+        background-size: 24px 24px;
+    }
+    
+    /* Custom Scrollbar */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #cbd5e0;
+        border-radius: 3px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #a0aec0;
+    }
+
+    /* Animations */
+    @keyframes fade-in {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    @keyframes scale-up {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes bounce-subtle {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-3px); }
+    }
+    @keyframes slide-up {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fade-in {
+        animation: fade-in 0.3s ease-out forwards;
+    }
+    .animate-scale-up {
+        animation: scale-up 0.4s ease-out forwards;
+    }
+    .animate-bounce-subtle {
+        animation: bounce-subtle 2s infinite ease-in-out;
+    }
+    .animate-slide-up {
+        animation: slide-up 0.5s ease-out forwards;
+    }
+}
