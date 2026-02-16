@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Logo from './Logo';
 
 export default function Header() {
     const [isVisible, setIsVisible] = React.useState(true);
@@ -72,8 +73,18 @@ export default function Header() {
 
                     {/* Secondary Navigation */}
                     <div className="flex items-center gap-6 font-medium">
-                        <a href="#" className="hover:text-gray-300 transition-colors">Blogs</a>
-                        <a href="#" className="hover:text-gray-300 transition-colors">Careers</a>
+                        <a href="/blogs" className="hover:text-gray-300 transition-colors">Blogs</a>
+                        <a
+                            href="/careers"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                window.history.pushState({}, '', '/careers');
+                                window.dispatchEvent(new PopStateEvent('popstate'));
+                            }}
+                            className="hover:text-gray-300 transition-colors"
+                        >
+                            Careers
+                        </a>
                         <a href="#" className="hover:text-gray-300 transition-colors">Events</a>
                         <a href="#" className="hover:text-gray-300 transition-colors">Media</a>
                         <a href="#" className="hover:text-gray-300 transition-colors">Newsletter</a>
@@ -90,8 +101,16 @@ export default function Header() {
             <div className="bg-white py-4">
                 <div className="container-custom flex justify-between items-center">
                     {/* Logo */}
-                    <a href="#" className="flex-shrink-0">
-                        <img src="./images/3ie-logo.png" alt="3ie Impact" className="h-12 w-auto" />
+                    <a
+                        href="/"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            window.history.pushState({}, '', '/');
+                            window.dispatchEvent(new PopStateEvent('popstate'));
+                        }}
+                        className="flex-shrink-0"
+                    >
+                        <Logo className="h-12 w-auto" />
                     </a>
 
                     {/* Primary Navigation */}

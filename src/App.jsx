@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import ResourceGrid from './components/ResourceGrid';
+import Careers from './components/Careers';
 import Newsletter from './components/Newsletter';
 import Footer from './components/Footer';
 
@@ -44,25 +45,33 @@ class ErrorBoundary extends React.Component {
 
 export default function App() {
   const [categoryFilter, setCategoryFilter] = React.useState("All");
-  const [audienceFilter, setAudienceFilter] = React.useState("All");
+
+  const [currentPath, setCurrentPath] = React.useState(window.location.pathname);
+
+  // Simple router effect
+  React.useEffect(() => {
+    const handlePopState = () => setCurrentPath(window.location.pathname);
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   try {
     return (
       <ErrorBoundary>
-        <div className="min-h-screen bg-white" data-name="app" data-file="app.jsx">
+        <div className="min-h-screen bg-[var(--secondary-bg)]" data-name="app" data-file="app.jsx">
           <Header />
           <main className="pt-28">
-            <Hero
-              categoryFilter={categoryFilter}
-              audienceFilter={audienceFilter}
-            />
-
-            <ResourceGrid
-              categoryFilter={categoryFilter}
-              setCategoryFilter={setCategoryFilter}
-              audienceFilter={audienceFilter}
-              setAudienceFilter={setAudienceFilter}
-            />
+            {currentPath === '/careers' ? (
+              <Careers />
+            ) : (
+              <>
+                <Hero />
+                <ResourceGrid
+                  categoryFilter={categoryFilter}
+                  setCategoryFilter={setCategoryFilter}
+                />
+              </>
+            )}
             <Newsletter />
           </main>
           <Footer />
