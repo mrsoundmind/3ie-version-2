@@ -1,9 +1,10 @@
 import React from 'react';
+import logoImage from '../images/3ie-logo.png';
 
 const Logo = ({ className = "h-12", showText = true, ...props }) => {
     return (
         <img
-            src="/src/images/3ie-logo.png"
+            src={logoImage}
             alt="3ie Logo"
             className={`object-contain ${className}`}
             {...props}
