@@ -65,29 +65,30 @@ export default function Careers() {
             <div className="fixed inset-0 bg-gradient-to-b from-transparent via-[var(--secondary-bg)]/50 to-[var(--secondary-bg)] pointer-events-none"></div>
 
             {/* 1. HERO SECTION: "Spotlight Card Style" */}
-            <section className="relative min-h-[85vh] flex items-center pt-20 pb-20 overflow-hidden">
+            <section className="relative min-h-[85vh] flex items-center pt-32 pb-20 overflow-visible">
                 <div className="container-custom relative z-10">
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
                         {/* Content */}
                         <div className="order-2 lg:order-1 reveal-on-scroll">
-                            <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-blue-100/80 backdrop-blur-sm text-[var(--primary-blue)] text-xs font-bold tracking-widest uppercase mb-6 border border-blue-200 animate-bounce-subtle">
-                                <Users className="w-3 h-3" /> Join Our Team
-                            </span>
-                            <h1 className="text-5xl lg:text-7xl font-black text-[var(--primary-blue)] leading-[1.1] mb-8 tracking-tight">
-                                Transform <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Evidence</span> into <br />
-                                Action.
+                            {/* Standardized Badge */}
+                            <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 text-[var(--primary-blue)] text-xs font-bold tracking-widest uppercase border border-blue-100 shadow-sm mb-8">
+                                <Users className="w-3 h-3 mr-2 text-blue-500" />
+                                Join Our Team
+                            </div>
+
+                            {/* Huge Typography matching Resources */}
+                            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-[var(--primary-blue)] leading-[0.9] tracking-tighter mb-8">
+                                Join our team
                             </h1>
-                            <p className="text-xl text-gray-600 leading-relaxed mb-10 max-w-lg font-medium">
-                                Join a global team of thinkers and doers dedicated to improving lives through rigorous evidence and innovative policy.
+                            <p className="text-xl md:text-2xl text-gray-600 leading-relaxed mb-10 max-w-lg font-medium">
+                                Help us generate high-quality evidence to improve the lives of people in low- and middle-income countries.
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                                <a href="#open-positions" className="group relative px-8 py-4 bg-[var(--primary-blue)] text-white rounded-full font-bold shadow-xl shadow-blue-900/20 hover:shadow-2xl hover:shadow-blue-900/30 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-                                    <span className="relative z-10 flex items-center gap-2 text-sm tracking-wide">
-                                        VIEW OPENINGS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                <a href="#open-positions" className="group relative px-8 py-4 bg-[var(--primary-blue)] text-white rounded-xl font-bold shadow-lg hover:shadow-xl hover:shadow-blue-900/20 active:scale-95 transition-all duration-200 overflow-hidden">
+                                    <span className="relative z-10 flex items-center gap-2">
+                                        View Openings <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                     </span>
-                                    <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                 </a>
 
                                 {/* Social Proof / Team Faces */}
@@ -105,11 +106,11 @@ export default function Careers() {
                         </div>
 
                         {/* Visual: "Spotlight Card" (Structured, consistent with Resources) */}
-                        <div className="order-1 lg:order-2 relative reveal-on-scroll perspective-1000">
-                            {/* Decorative glow behind card */}
-                            <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-2xl blur opacity-20 animate-pulse"></div>
+                        <div className="order-1 lg:order-2 relative reveal-on-scroll">
+                            {/* Glow Effect - Enhanced */}
+                            <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-2xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
 
-                            <div className="relative bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-100 transform rotate-1 hover:rotate-0 transition-all duration-500 group">
+                            <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden border border-white/50 ring-1 ring-black/5 hover:-translate-y-2 transition-transform duration-500 group">
                                 {/* Header Bar */}
                                 <div className="bg-[var(--primary-blue)] px-6 py-4 flex justify-between items-center relative overflow-hidden">
                                     <div className="absolute inset-0 bg-black/5"></div>
@@ -142,10 +143,6 @@ export default function Careers() {
                                     </div>
                                 </div>
                             </div>
-
-                            {/* Decorative Background Elements (Subtle Blue) */}
-                            <div className="absolute -top-12 -right-12 w-64 h-64 bg-blue-100 rounded-full blur-3xl -z-10 opacity-60"></div>
-                            <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-indigo-100 rounded-full blur-3xl -z-10 opacity-60"></div>
                         </div>
                     </div>
                 </div>
@@ -168,7 +165,7 @@ export default function Careers() {
                             { title: "Innovative", icon: Lightbulb, desc: "We push boundaries to find new and better ways to solve problems.", color: "bg-indigo-50 text-indigo-600" },
                             { title: "Collaborative", icon: Puzzle, desc: "We believe the best solutions come from working together.", color: "bg-sky-50 text-sky-600" },
                         ].map((item, idx) => (
-                            <div key={idx} className="group relative p-8 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-blue-900/5 hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-default reveal-on-scroll">
+                            <div key={idx} className="group relative p-8 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-blue-900/5 hover:border-blue-300 hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-default reveal-on-scroll">
                                 <div className={`w-14 h-14 rounded-2xl ${item.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                                     <item.icon className="w-7 h-7" />
                                 </div>
@@ -239,7 +236,7 @@ export default function Careers() {
 
                     <div className="space-y-4">
                         {jobOpenings.map((job) => (
-                            <div key={job.id} className="group flex flex-col md:flex-row md:items-center justify-between p-8 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-blue-900/10 hover:border-blue-100 hover:-translate-y-1 transition-all duration-300 cursor-pointer reveal-on-scroll">
+                            <div key={job.id} className="group flex flex-col md:flex-row md:items-center justify-between p-8 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-blue-900/10 hover:border-blue-300 hover:-translate-y-1 transition-all duration-300 cursor-pointer reveal-on-scroll">
                                 <div className="flex-grow">
                                     <div className="flex items-center gap-3 mb-2">
                                         <span className="px-3 py-1 rounded-full bg-blue-50 text-[var(--primary-blue)] text-xs font-bold uppercase tracking-wider">
