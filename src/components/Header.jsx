@@ -97,8 +97,8 @@ export default function Header() {
                 </div>
             </div>
 
-            {/* Main Navigation - White */}
-            <div className="bg-white py-4">
+            {/* Main Navigation - Brand Blue */}
+            <div className="bg-[#153A80] py-4 transition-colors duration-300">
                 <div className="container-custom flex justify-between items-center">
                     {/* Logo */}
                     <a
@@ -114,19 +114,19 @@ export default function Header() {
                     </a>
 
                     {/* Primary Navigation */}
-                    <div className="hidden md:flex items-center gap-8 font-bold text-[var(--primary-blue)]">
-                        <div className="relative group cursor-pointer flex items-center gap-1">
+                    <div className="hidden md:flex items-center gap-8 font-bold text-white">
+                        <div className="relative group cursor-pointer flex items-center gap-1 hover:text-blue-200 transition-colors">
                             <span>About</span>
                             <div className="icon-chevron-down text-xs mt-0.5"></div>
                         </div>
-                        <a href="#" className="hover:text-[var(--primary-dark)] transition-colors text-[var(--primary-blue)]">Services</a>
-                        <a href="#" className="hover:text-[var(--primary-dark)] transition-colors text-[var(--primary-blue)]">Research</a>
-                        <div className="relative group cursor-pointer flex items-center gap-1 text-[var(--primary-blue)] hover:bg-[var(--primary-blue)] hover:text-white px-4 py-6 -my-4 h-full relative z-10 transition-colors">
+                        <a href="#" className="hover:text-blue-200 transition-colors">Services</a>
+                        <a href="#" className="hover:text-blue-200 transition-colors">Research</a>
+                        <div className="relative group cursor-pointer flex items-center gap-1 hover:text-blue-200 px-4 py-6 -my-4 h-full relative z-10 transition-colors">
                             <span>Evidence Hub</span>
                             <div className="icon-chevron-down text-xs mt-0.5"></div>
 
-                            {/* Dropdown Menu (Simplified for visual match) */}
-                            <div className="absolute top-full left-0 w-64 bg-[var(--primary-blue)] shadow-xl py-2 hidden group-hover:block rounded-b-md">
+                            {/* Dropdown Menu */}
+                            <div className="absolute top-full left-0 w-64 bg-[#153A80] shadow-xl py-2 hidden group-hover:block rounded-b-md border-t border-blue-400/30">
                                 <a href="#" className="block px-4 py-2 text-sm text-white hover:bg-white/10">Development Evidence Portal</a>
                                 <a href="#" className="block px-4 py-2 text-sm text-white hover:bg-white/10">Evidence gap maps</a>
                                 <a href="#" className="block px-4 py-2 text-sm text-white hover:bg-white/10">Impact Stories Dashboard</a>
@@ -136,7 +136,7 @@ export default function Header() {
                     </div>
 
                     {/* CTA Button */}
-                    <a href="#" className="bg-[var(--primary-dark)] text-white font-bold py-2 px-6 rounded-full hover:bg-blue-900 transition-colors shadow-lg shadow-blue-900/20">
+                    <a href="#" className="bg-white text-[#153A80] font-bold py-2 px-6 rounded-full hover:bg-blue-50 transition-colors shadow-lg shadow-black/10">
                         Impact
                     </a>
                 </div>
