@@ -88,7 +88,17 @@ export default function Header() {
                         <a href="#" className="hover:text-gray-300 transition-colors">Events</a>
                         <a href="#" className="hover:text-gray-300 transition-colors">Media</a>
                         <a href="#" className="hover:text-gray-300 transition-colors">Newsletter</a>
-                        <a href="#" className="font-bold text-white">Resources</a>
+                        <a
+                            href="/"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                window.history.pushState({}, '', '/');
+                                window.dispatchEvent(new PopStateEvent('popstate'));
+                            }}
+                            className="font-bold text-white"
+                        >
+                            Resources
+                        </a>
                         <a href="#" className="hover:text-gray-300 transition-colors">Donate</a>
                         <button className="hover:text-gray-300 transition-colors">
                             <div className="icon-search text-sm"></div>
@@ -127,7 +137,17 @@ export default function Header() {
 
                             {/* Dropdown Menu (Simplified for visual match) */}
                             <div className="absolute top-full left-0 w-64 bg-[var(--primary-blue)] shadow-xl py-2 hidden group-hover:block rounded-b-md">
-                                <a href="#" className="block px-4 py-2 text-sm text-white hover:bg-white/10">Development Evidence Portal</a>
+                                <a
+                                    href="/"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        window.history.pushState({}, '', '/');
+                                        window.dispatchEvent(new PopStateEvent('popstate'));
+                                    }}
+                                    className="block px-4 py-2 text-sm text-white hover:bg-white/10"
+                                >
+                                    Development Evidence Portal
+                                </a>
                                 <a href="#" className="block px-4 py-2 text-sm text-white hover:bg-white/10">Evidence gap maps</a>
                                 <a href="#" className="block px-4 py-2 text-sm text-white hover:bg-white/10">Impact Stories Dashboard</a>
                                 <a href="#" className="block px-4 py-2 text-sm text-white hover:bg-white/10">Publications</a>
