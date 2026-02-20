@@ -1,5 +1,40 @@
 {
+    "headers": [
+        {
+            "source": "/proxy-3ie/(.*)",
+            "headers": [
+                {
+                    "key": "X-Frame-Options",
+                    "value": "ALLOWALL"
+                },
+                {
+                    "key": "Content-Security-Policy",
+                    "value": "frame-ancestors *"
+                }
+            ]
+        }
+    ],
     "rewrites": [
+        {
+            "source": "/sites/(.*)",
+            "destination": "https://www.3ieimpact.org/sites/$1"
+        },
+        {
+            "source": "/core/(.*)",
+            "destination": "https://www.3ieimpact.org/core/$1"
+        },
+        {
+            "source": "/modules/(.*)",
+            "destination": "https://www.3ieimpact.org/modules/$1"
+        },
+        {
+            "source": "/themes/(.*)",
+            "destination": "https://www.3ieimpact.org/themes/$1"
+        },
+        {
+            "source": "/proxy-3ie/:match*",
+            "destination": "https://www.3ieimpact.org/:match*"
+        },
         {
             "source": "/(.*)",
             "destination": "/index.html"

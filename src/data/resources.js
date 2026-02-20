@@ -2,7 +2,7 @@ export const resourcesData = [
     {
         id: 1,
         title: "Development Evidence Portal",
-        description: "The world's most comprehensive repository of impact evaluations and systematic reviews in international development.",
+        description: "The world's most comprehensive repository of impact evaluations and systematic reviews in international development. It provides freely accessible, curated evidence to inform policy and practice globally, helping decision-makers understand what works, for whom, and why in various development contexts.",
         longDescription: null, // Using iframe instead
         category: ["Databases"],
         audience: ["For Researchers", "For Policymakers", "For Donors", "For NGOs"],
@@ -15,7 +15,7 @@ export const resourcesData = [
     {
         id: 2,
         title: "Evidence Gap Maps",
-        description: "Visual tools that map existing evidence and identify gaps where more research is needed.",
+        description: "Visual tools that map existing evidence and identify gaps where more research is needed. By consolidating available studies into an interactive framework, these maps enable researchers and funders to quickly prioritize future investments and avoid duplicating previous efforts.",
         longDescription: `
             <div class="space-y-6">
                 <p class="text-lg text-gray-700 leading-relaxed">Evidence Gap Maps (EGMs) are thematic collections of evidence that show what we know and do not know about development interventions.</p>
@@ -43,14 +43,14 @@ export const resourcesData = [
         audience: ["For Researchers", "For Policymakers"],
         icon: "map",
         featured: true,
-        url: "https://www.3ieimpact.org/evidence-hub/evidence-gap-maps",
+        url: "/proxy-3ie/evidence-hub/evidence-gap-maps",
         totalPages: 45,
         useIframe: false
     },
     {
         id: 3,
         title: "Impact Evaluation Glossary",
-        description: "A searchable database of terms and definitions used in impact evaluation and social research.",
+        description: "A searchable database of terms and definitions used in impact evaluation and social research. Designed to standardize terminology across the sector, this comprehensive resource ensures clarity and consistency in research proposals, academic discussions, and policy formulation.",
         longDescription: `
             <div class="space-y-6">
                  <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-100 text-sm text-yellow-800 mb-4">
@@ -77,14 +77,14 @@ export const resourcesData = [
         audience: ["For Researchers", "For Students"],
         icon: "book-a",
         featured: false,
-        url: "https://www.3ieimpact.org/resources/Glossaries",
+        url: "/proxy-3ie/resources/Glossaries",
         totalPages: 150,
         useIframe: false
     },
     {
         id: 4,
         title: "RIDIE Registry",
-        description: "The Registry for International Development Impact Evaluations (RIDIE) promotes transparency and high-quality research.",
+        description: "The Registry for International Development Impact Evaluations (RIDIE) promotes transparency and high-quality research. By requiring researchers to proactively log their evaluation designs before data collection begins, RIDIE promotes methodological transparency and helps prevent publication bias.",
         longDescription: `
             <div class="space-y-6">
                 <div class="flex items-center gap-4 mb-4">
@@ -111,14 +111,14 @@ export const resourcesData = [
         audience: ["For Researchers", "For Donors"],
         icon: "clipboard-list",
         featured: false,
-        url: "https://www.3ieimpact.org/resources/ridie",
+        url: "/proxy-3ie/resources/ridie",
         totalPages: 890,
         useIframe: false
     },
     {
         id: 5,
         title: "PIR Methods Menu",
-        description: "A comprehensive menu of methods for Policy, Influence, and Research (PIR) effectiveness.",
+        description: "A comprehensive menu of methods for Policy, Influence, and Research (PIR) effectiveness. This detailed guide assists practitioners in selecting the most appropriate evaluation tools—from case studies to agent-based modeling—tailored to their specific programmatic contexts.",
         longDescription: `
             <div class="space-y-8">
                 <p class="text-lg text-gray-700 leading-relaxed">
@@ -200,7 +200,7 @@ export const resourcesData = [
         audience: ["For Researchers", "For Evaluators"],
         icon: "menu",
         featured: false,
-        url: "https://www.3ieimpact.org/pir-methods",
+        url: "/proxy-3ie/pir-methods",
         totalPages: 24,
         useIframe: false
     },
@@ -229,7 +229,7 @@ export const resourcesData = [
         audience: ["For Researchers", "For Academics"],
         icon: "book-open-text",
         featured: false,
-        url: "https://www.3ieimpact.org/resources/journal-of-development-effectiveness",
+        url: "/proxy-3ie/resources/journal-of-development-effectiveness",
         totalPages: 12,
         useIframe: false
     },
@@ -258,7 +258,7 @@ export const resourcesData = [
         audience: ["For Researchers"],
         icon: "satellite",
         featured: false,
-        url: "https://www.3ieimpact.org/resources/remote-sensing-inventory",
+        url: "/proxy-3ie/resources/remote-sensing-inventory",
         totalPages: 67,
         useIframe: false
     },
@@ -307,7 +307,7 @@ export const resourcesData = [
         audience: ["For Students", "For Researchers"],
         icon: "film",
         featured: false,
-        url: "https://www.3ieimpact.org/resources/video-lecture-series",
+        url: "/proxy-3ie/resources/video-lecture-series",
         totalPages: 12,
         useIframe: false
     },
@@ -337,7 +337,7 @@ export const resourcesData = [
         audience: ["For Researchers", "For Policymakers"],
         icon: "globe",
         featured: false,
-        url: "https://www.3ieimpact.org/resources/International-Development-Coordinating-Group",
+        url: "/proxy-3ie/resources/International-Development-Coordinating-Group",
         totalPages: 34,
         useIframe: false
     }

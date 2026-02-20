@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Users, ArrowRight, Star, Globe, Lightbulb, Puzzle, Download, Clock, MapPin } from 'lucide-react';
+import Breadcrumb from './Breadcrumb';
 
 const jobOpenings = [
     {
@@ -65,11 +66,12 @@ export default function Careers() {
             <div className="fixed inset-0 bg-gradient-to-b from-transparent via-[var(--secondary-bg)]/50 to-[var(--secondary-bg)] pointer-events-none"></div>
 
             {/* 1. HERO SECTION: "Spotlight Card Style" */}
-            <section className="relative min-h-[85vh] flex items-center pt-32 pb-20 overflow-visible">
+            <section className="relative min-h-[85vh] flex items-center pt-24 pb-20 overflow-visible">
                 <div className="container-custom relative z-10">
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
                         {/* Content */}
                         <div className="order-2 lg:order-1 reveal-on-scroll">
+                            <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Careers' }]} />
                             {/* Standardized Badge */}
                             <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 text-[var(--primary-blue)] text-xs font-bold tracking-widest uppercase border border-blue-100 shadow-sm mb-8">
                                 <Users className="w-3 h-3 mr-2 text-blue-500" />

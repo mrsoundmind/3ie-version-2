@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { resourcesData } from '../data/resources';
 import PeekModal from './PeekModal';
 import { Sparkles, ArrowRight, Database, Globe, BookOpen, Users, ExternalLink } from 'lucide-react';
+import Breadcrumb from './Breadcrumb';
 
 export default function Hero({ categoryFilter, audienceFilter }) {
     const [selectedResourceId, setSelectedResourceId] = React.useState(null);
@@ -13,7 +14,7 @@ export default function Hero({ categoryFilter, audienceFilter }) {
     const handleClose = () => setSelectedResourceId(null);
 
     return (
-        <section className="relative bg-[var(--secondary-bg)] pt-32 pb-20 overflow-visible min-h-[60vh] flex items-center">
+        <section className="relative bg-[var(--secondary-bg)] pt-24 pb-12 overflow-visible min-h-[40vh] flex items-center">
             {/* Background: Technical Grid & Glows */}
             <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none"></div>
             <div className="absolute top-0 right-0 w-[50rem] h-[50rem] bg-blue-400/5 rounded-full blur-3xl -z-10 pointer-events-none translate-x-1/3 -translate-y-1/4"></div>
@@ -22,6 +23,8 @@ export default function Hero({ categoryFilter, audienceFilter }) {
 
                 {/* Left Column: Text Only */}
                 <div className="text-left">
+                    <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Resources' }]} />
+
                     {/* 1. Headline - Simple "Resources" but HUGE */}
                     <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-[var(--primary-blue)] leading-[0.9] tracking-tighter mb-8 animate-fade-in-up">
                         Resources

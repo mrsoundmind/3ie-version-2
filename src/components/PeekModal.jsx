@@ -172,80 +172,17 @@ export default function PeekModal({ resource, isOpen, onClose }) {
 
 
 
-                    {/* Conditional Content: Iframe vs Reader View */}
-                    {resource.useIframe ? (
+                    {/* All Content Loads in Iframe */}
+                    <div className="w-full h-full bg-gray-50 flex items-center justify-center relative">
+                        {/* Loading State Context (Optional wrapper, iframe handles its own but good for UX) */}
                         <iframe
                             src={resource.url}
                             title={resource.title}
-                            className="w-full h-full border-0"
+                            className="absolute inset-0 w-full h-full border-0 bg-white"
                             sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         />
-                    ) : (
-                        <div className="h-full overflow-y-auto custom-scrollbar">
-                            <div className="max-w-4xl mx-auto px-8 py-12">
-                                {/* "Reader View" Header - Cleaned up */}
-                                <div className="mb-8 border-b border-gray-100 pb-8">
-                                    <h1 className="text-4xl md:text-5xl font-serif font-black text-gray-900 mb-6 leading-tight">
-                                        {resource.title}
-                                    </h1>
-                                    <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
-                                        <span className="flex items-center gap-1">
-                                            <div className={`icon-${resource.icon}`}></div>
-                                            {resource.category[0]}
-                                        </span>
-                                        <span>•</span>
-                                        <span>3ie Impact</span>
-                                        <span>•</span>
-                                        <span>Updated 2024</span>
-                                    </div>
-                                </div>
-
-                                {/* Main Content Body */}
-                                <div className="prose prose-xl prose-blue max-w-none text-gray-600 leading-relaxed">
-                                    {resource.longDescription ? (
-                                        <div dangerouslySetInnerHTML={{ __html: resource.longDescription }}></div>
-                                    ) : (
-                                        <p>{resource.description}</p>
-                                    )}
-                                </div>
-
-                                {/* Call to Action at bottom of article */}
-
-
-                                {/* "You Might Also Like" Section */}
-                                {relatedResources.length > 0 && (
-                                    <div className="mt-12 pt-8 border-t border-gray-100">
-                                        <h4 className="font-bold text-gray-900 text-lg mb-6 flex items-center gap-2">
-                                            <div className="icon-sparkles text-[var(--primary-blue)]"></div>
-                                            You Might Also Like
-                                        </h4>
-                                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                                            {relatedResources.map(related => (
-                                                <div
-                                                    key={related.id}
-                                                    className="group block p-4 rounded-xl border border-gray-100 hover:border-blue-200 hover:shadow-md transition-all cursor-pointer bg-white"
-                                                /* Note: In a real app, this would switch the modal content. 
-                                                   For now, we'll just close and let them click the grid, or we could lift state to App to switch it directly.
-                                                   Given the constraints, let's keep it simple: it's a visual implementation. */
-                                                >
-                                                    <div className="flex items-center gap-3 mb-3">
-                                                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center bg-gray-50 group-hover:bg-blue-50 transition-colors`}>
-                                                            <div className={`icon-${related.icon} text-gray-400 group-hover:text-[var(--primary-blue)]`}></div>
-                                                        </div>
-                                                        <span className="text-[10px] uppercase font-bold text-gray-400 tracking-wider">Related</span>
-                                                    </div>
-                                                    <h5 className="font-bold text-gray-900 text-sm mb-1 line-clamp-2 group-hover:text-[var(--primary-blue)] transition-colors">
-                                                        {related.title}
-                                                    </h5>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-                    )}
+                    </div>
                 </div>
             </div>
         </div >

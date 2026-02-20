@@ -32,6 +32,9 @@
     h5,
     h6 {
         font-family: 'Open Sans', sans-serif;
+        color: var(--primary-blue);
+        font-weight: 700;
+        letter-spacing: -0.02em;
     }
 }
 

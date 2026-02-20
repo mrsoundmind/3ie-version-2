@@ -103,7 +103,7 @@ export default function ResourceGrid({ categoryFilter, setCategoryFilter }) {
     const showCategory = categoryFilter && categoryFilter !== "All";
 
     return (
-        <section id="resources-grid" className="py-20 bg-gray-50/50 min-h-[800px]">
+        <section id="resources-grid" className="py-8 bg-gray-50/50 min-h-[800px]">
             {/* Peek Modal Component */}
             <PeekModal
                 resource={activeResource}
@@ -114,7 +114,7 @@ export default function ResourceGrid({ categoryFilter, setCategoryFilter }) {
             <div className="container-custom">
 
                 {/* Section Header */}
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+                <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
                     <div className="max-w-2xl">
                         {/* Breadcrumbs */}
 
@@ -126,62 +126,33 @@ export default function ResourceGrid({ categoryFilter, setCategoryFilter }) {
                     </div>
                 </div>
 
-                {/* Sticky Control Bar - Solid & Clean */}
-                <div className="sticky top-6 z-[60] bg-white rounded-2xl border border-gray-100 shadow-xl shadow-slate-200/50 p-2 md:p-3 mb-12 transition-all duration-300 ring-1 ring-black/5">
+                {/* Sticky Control Bar - Tabs Style */}
+                <div className="sticky top-6 z-[60] bg-white rounded-xl border border-gray-200 shadow-sm p-2 md:px-6 md:py-3 mb-10 transition-all duration-300">
                     <div className="flex flex-col xl:flex-row gap-4 justify-between items-center">
 
                         {/* Filters Group + Sorting */}
-                        <div className="flex flex-wrap items-center gap-3 w-full md:w-auto">
+                        <div className="flex flex-wrap items-center justify-between w-full">
 
-                            {/* Label Dropdown (Renamed from Category) */}
-                            <div className="relative group pb-4 md:pb-0">
-                                <button className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all border shadow-sm hover:shadow-md hover:-translate-y-0.5 ${categoryFilter !== "All"
-                                    ? "bg-blue-50 text-blue-700 border-blue-200 ring-2 ring-blue-100"
-                                    : "bg-white text-slate-700 border-gray-200/60 hover:bg-gray-50 hover:border-blue-200"
-                                    }`}>
-                                    <span className={`font-medium ${categoryFilter !== "All" ? "text-blue-500" : "text-slate-400"}`}>Label:</span>
-                                    <span>{categoryFilter}</span>
-                                    <div className={`icon-chevron-down text-xs ml-1 transition-colors ${categoryFilter !== "All" ? "text-blue-500" : "text-slate-400 group-hover:text-blue-500"}`}></div>
-                                </button>
-                                <div className="absolute left-0 top-full -mt-2 w-64 pt-2 hidden group-hover:block z-50">
-                                    <div className="bg-white rounded-xl shadow-xl border border-gray-100 py-2 animate-fade-in">
-                                        {categoryOptions.map(option => (
-                                            <button
-                                                key={option}
-                                                onClick={() => {
-                                                    setCategoryFilter(option);
-                                                }}
-                                                className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-50 transition-colors flex justify-between ${categoryFilter === option ? "text-[var(--primary-blue)] font-bold bg-blue-50" : "text-gray-600"}`}
-                                            >
-                                                {option}
-                                                <span className="text-xs text-gray-400 bg-gray-100 px-1.5 rounded-full">{getCount('category', option)}</span>
-                                            </button>
-                                        ))}
-                                    </div>
-                                </div>
+                            {/* Horizontal Tabs */}
+                            <div className="flex items-center space-x-1 md:space-x-4 overflow-x-auto pb-2 md:pb-0 scrollbar-hide w-full xl:w-auto border-b md:border-b-0 border-gray-100 flex-nowrap md:flex-wrap">
+                                {categoryOptions.map(option => (
+                                    <button
+                                        key={option}
+                                        onClick={() => setCategoryFilter(option)}
+                                        className={`whitespace-nowrap px-4 py-2 text-sm font-semibold transition-all border-b-2 ${categoryFilter === option
+                                            ? "border-[var(--primary-blue)] text-[var(--primary-blue)]"
+                                            : "border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-300"
+                                            }`}
+                                    >
+                                        {option}
+                                        <span className={`ml-2 text-xs px-1.5 rounded-full ${categoryFilter === option ? "bg-blue-100 text-blue-700" : "bg-gray-100 text-gray-500"}`}>
+                                            {getCount('category', option)}
+                                        </span>
+                                    </button>
+                                ))}
                             </div>
 
-                            {/* Sorting Dropdown */}
-                            <div className="relative group pb-4 md:pb-0 border-l pl-4 border-gray-200/60 ml-2">
-                                <button className="flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-[var(--primary-blue)] transition-colors py-2 group/sort">
-                                    <span className="text-slate-400 font-medium">Sort by:</span>
-                                    {sortBy}
-                                    <div className="icon-chevron-down text-xs text-slate-300 group-hover/sort:text-blue-500 transition-colors"></div>
-                                </button>
-                                <div className="absolute left-0 top-full -mt-2 w-40 pt-2 hidden group-hover:block z-50">
-                                    <div className="bg-white rounded-xl shadow-xl border border-gray-100 py-2 animate-fade-in">
-                                        {["Featured", "Newest", "A-Z", "Z-A"].map(option => (
-                                            <button
-                                                key={option}
-                                                onClick={() => setSortBy(option)}
-                                                className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-50 transition-colors ${sortBy === option ? "text-[var(--primary-blue)] font-bold bg-blue-50" : "text-gray-600"}`}
-                                            >
-                                                {option}
-                                            </button>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
+
 
                         </div>
                     </div>
@@ -193,30 +164,16 @@ export default function ResourceGrid({ categoryFilter, setCategoryFilter }) {
                         <div
                             key={resource.id}
                             style={{ animationDelay: `${index * 0.05}s`, opacity: 0 }} // opacity 0 start for animation to handle fade-in
-                            className={`group bg-white rounded-xl border transition-all duration-300 flex flex-col h-full relative overflow-hidden cursor-pointer animate-slide-up ${resource.featured
-                                ? "border-blue-300 shadow-lg ring-2 ring-blue-50"
-                                : "border-gray-200 hover:border-blue-300 hover:shadow-xl hover:-translate-y-1"
-                                }`}
+                            className="group bg-white rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full relative overflow-hidden cursor-pointer animate-slide-up"
                             onClick={() => handleOpen(resource.id)}
                             onMouseEnter={() => setHoveredCard(resource.id)}
                             onMouseLeave={() => setHoveredCard(null)}
                         >
-                            {/* Featured Badge - Hidden on Hover to show Expand View */}
-                            {resource.featured && (
-                                <div className="absolute top-4 right-4 z-10 group-hover:opacity-0 transition-opacity duration-200">
-                                    <span className="flex items-center gap-1 bg-blue-100 text-[var(--primary-blue)] text-xs font-bold px-2 py-1 rounded-full border border-blue-200">
-                                        <div className="icon-star text-xs fill-current"></div>
-                                        Featured
-                                    </span>
-                                </div>
-                            )}
+                            {/* Featured Badge Removed */}
 
                             {/* 'Expand View' Visual Cue - Appears on Hover for ALL content */}
                             <div className="absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                                <div className={`flex items-center gap-1 backdrop-blur-sm text-xs font-bold px-3 py-1.5 rounded-full border shadow-sm ${resource.featured
-                                    ? "bg-blue-100/90 text-[var(--primary-blue)] border-blue-200"
-                                    : "bg-white/90 text-gray-600 border-gray-200"
-                                    }`}>
+                                <div className="flex items-center gap-1 backdrop-blur-sm text-xs font-bold px-3 py-1.5 rounded-full border shadow-sm bg-white/90 text-gray-600 border-gray-200">
                                     <div className="icon-maximize text-xs"></div>
                                     Expand View
                                 </div>
@@ -225,24 +182,17 @@ export default function ResourceGrid({ categoryFilter, setCategoryFilter }) {
                             <div className="p-7 flex flex-col h-full relative z-0">
                                 {/* Card Header */}
                                 <div className="flex items-start justify-between mb-5">
-                                    <div className={`w-14 h-14 rounded-xl flex items-center justify-center transition-colors duration-300 border ${resource.featured
-                                        ? "bg-[var(--primary-blue)] border-blue-600"
-                                        : "bg-gray-50 border-gray-100 group-hover:bg-blue-50 group-hover:border-blue-100"
-                                        }`}>
-                                        <div className={`icon-${resource.icon} text-2xl transition-colors duration-300 ${resource.featured
-                                            ? "text-white"
-                                            : "text-gray-400 group-hover:text-[var(--primary-blue)]"
-                                            }`}></div>
+                                    <div className="w-14 h-14 rounded-xl flex items-center justify-center transition-colors duration-300 border bg-gray-50 border-gray-100 group-hover:bg-blue-50 group-hover:border-blue-100">
+                                        <div className={`icon-${resource.icon} text-2xl transition-colors duration-300 text-gray-400 group-hover:text-[var(--primary-blue)]`}></div>
                                     </div>
                                 </div>
 
                                 {/* Content */}
                                 <div className="flex-grow">
-                                    <h3 className={`text-xl font-bold mb-3 leading-snug group-hover:text-[var(--primary-blue)] transition-colors ${resource.featured ? "text-[var(--primary-blue)]" : "text-gray-900"
-                                        }`}>
+                                    <h3 className="text-xl font-bold mb-3 leading-snug group-hover:text-[var(--primary-blue)] transition-colors text-gray-900 line-clamp-2">
                                         {resource.title}
                                     </h3>
-                                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                                    <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-5 min-h-[100px]">
                                         {resource.description}
                                     </p>
 
